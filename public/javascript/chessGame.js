@@ -106,6 +106,10 @@ socket.on("playerRole", function(role){
     renderBoard();
 })
 
+socket.on("spectatorRole", function(){
+    playerRole = null;
+    renderBoard();
+})
 
 socket.on("broadState", function(fen){
     chess.load(fen);
