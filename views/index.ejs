@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, minmax(0, 1fr));
+            grid-template-rows: repeat(8, minmax(0, 1fr));
+            width: 400px;
+            height: 400px;
+            transform: rotate(0deg);
+        }
+
+        .square {
+            display: flex;
+            justify-content: center;
+            /* Centers the piece horizontally */
+            align-items: center;
+            /* Centers the piece vertically */
+        }
+
+        .piece.white {
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .piece.black {
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .flipped {
+            transform: rotate(180deg);
+        }
+
+        /* .square {
+            border: 1px solid white;
+        } */
+
+        .light {
+            background-color: #f0d9b5;
+            /* Light beige */
+        }
+
+        .dark {
+            background-color: #b58863;
+            /* Brown */
+        }
+
+        .piece {
+            font-size: 36px;
+            cursor: pointer;
+        }
+
+        .piece.draggable {
+            cursor: grab;
+        }
+
+        .dragging {
+            opacity: 0.5;
+        }
+
+        .flipped .piece {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="w-full h-screen flex items-center justify-center  bg-zinc-900">
+        <div class="chessboard w-96 h-96 bg-red-800"></div>
+        <div class="chess-piece" draggable="true" ...></div>
+
+    </div>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+        integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"
+        integrity="sha512-xRllwz2gdZciIB+AkEbeq+gVhX8VB8XsfqeFbUh+SzHlN96dEduwtTuVuc2u9EROlmW9+yhRlxjif66ORpsgVA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/javascript/chessGame.js"></script>
+</body>
+
+</html>
