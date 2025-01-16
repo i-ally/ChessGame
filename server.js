@@ -30,6 +30,7 @@ io.on("connection", function(uniquesocket){
       uniquesocket.emit("playerRole","b");
    }else{
     uniquesocket.emit("spectatorRole");
+    uniquesocket.emit("broadState", chess.fen());
    }
 
    uniquesocket.on("disconnect", function(){
