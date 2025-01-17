@@ -9,7 +9,6 @@ This project is a simple chess game implementation using JavaScript, HTML, and C
 - Chessboard with draggable pieces
 - Basic game logic and move validation
 - Multiplayer support via WebSocket
-- Players can only play if there is an even number of participants (1 or 2 players active)
 
 ## Installation
 
